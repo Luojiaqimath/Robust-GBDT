@@ -14,6 +14,7 @@ from sklearn.model_selection import cross_val_score
 from rfl_loss import RFLBinary, XGBRFLMulti
 
 
+# define model
 def robustxgb_binary(X_train, y_train, X_test, y_test, n_trials=10):
     sampler = optuna.samplers.TPESampler(seed=42)
     study = optuna.create_study(direction="maximize",
@@ -74,8 +75,8 @@ class RobustXGBBinary(object):
         auc_scores = cross_val_score(clf, self.X, self.y, cv=cv, scoring='roc_auc')
         return auc_scores.mean()
       
-     
-    
+
+# load data
 from sklearn.datasets import load_breast_cancer
 data = load_breast_cancer()  
 X = data.data.astype(np.float32)
@@ -83,6 +84,7 @@ y = data.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 
+# train model
 robustxgb_binary(X_train, y_train, X_test, y_test)
 ```
 
