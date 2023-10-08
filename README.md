@@ -4,7 +4,7 @@ Code for the paper: Robust-GBDT: A Novel Gradient Boosting Model for Noise-Robus
 
 # Demo for binary classification
 
-'''
+'''python
 import optuna
 import xgboost as xgb
 from sklearn.metrics import roc_auc_score, average_precision_score, accuracy_score
