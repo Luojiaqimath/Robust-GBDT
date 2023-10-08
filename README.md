@@ -90,6 +90,7 @@ robustxgb_binary(X_train, y_train, X_test, y_test)
 
 ## Demo for multi-class classification
 
+
 ```
 # define model
 def robustxgb_multi(X_train, y_train, X_test, y_test, n_trials=10):
