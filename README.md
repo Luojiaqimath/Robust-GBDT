@@ -1,5 +1,5 @@
 # Robust-GBDT
-Code for the paper: Robust-GBDT: A Novel Gradient Boosting Model for Noise-Robust Classification
+Code for the paper: [Robust-GBDT: A Novel Gradient Boosting Model for Noise-Robust Classification](https://arxiv.org/pdf/2310.05067.pdf)
 
 
 ## Demo for binary classification
