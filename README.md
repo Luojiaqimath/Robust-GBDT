@@ -97,7 +97,7 @@ from rfl_loss import RFLBinary
 import lightgbm as lgb
 
 
-# define model
+# define some functions
 def sigmoid(x):
     kEps = 1e-16 #  avoid 0 div
     x = np.minimum(-x, 88.7)  # avoid exp overflow
@@ -116,8 +116,9 @@ def predict_proba(model, X):
 def eval_auc(labels, preds):  # auc
     p = sigmoid(preds)
     return 'auc', roc_auc_score(labels, p), True
-    
-    
+
+
+# define model
 def robustlgb_binary(X_train, y_train, X_test, y_test, n_trials=10):
     optuna.logging.set_verbosity(optuna.logging.WARNING)  
     sampler = optuna.samplers.TPESampler(seed=42)
