@@ -367,7 +367,7 @@ def robustlgb_multi(X_train, y_train, X_test, y_test, n_trials=10):
     sampler = optuna.samplers.TPESampler(seed=42)
     study = optuna.create_study(direction="maximize",
                                 sampler=sampler,
-                                study_name='xgb_eval')
+                                study_name='lgb_eval')
     study.optimize(RobustLGBMulti(X_train, y_train), n_trials=n_trials)
 
     print("Best parameters:", study.best_trial.params)
