@@ -233,8 +233,8 @@ def robustxgb_multi(X_train, y_train, X_test, y_test, n_trials=10):
                                 )
     model.fit(X_train, y_train)
     
-    y_pred_proba = model.predict(X_test)  
-    acc = accuracy_score(y_test, y_pred_proba)
+    y_pred = model.predict(X_test)  
+    acc = accuracy_score(y_test, y_pred)
     print(f'Test ACC: {acc:.4f}')
     return acc
 
