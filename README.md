@@ -207,7 +207,7 @@ robustlgb_binary(X_train, y_train, X_test, y_test)
 ```
 
 
-## Demo for multi-class classification
+## Demo for multi-class classification using XGBoost
 
 
 ```python
