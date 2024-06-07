@@ -88,7 +88,7 @@ robustxgb_binary(X_train, y_train, X_test, y_test)
 ```
 
 ## Demo for binary classification using LightGBM
-```
+```python
 import optuna
 from sklearn.metrics import roc_auc_score, average_precision_score
 from sklearn.model_selection import  StratifiedKFold, train_test_split  
@@ -210,7 +210,7 @@ robustlgb_binary(X_train, y_train, X_test, y_test)
 ## Demo for multi-class classification
 
 
-```
+```python
 # define model
 def robustxgb_multi(X_train, y_train, X_test, y_test, n_trials=10):
     sampler = optuna.samplers.TPESampler(seed=42)
