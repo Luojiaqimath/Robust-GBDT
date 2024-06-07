@@ -4,7 +4,7 @@ Code for the paper: [Robust-GBDT: GBDT with Nonconvex Loss for Tabular Classific
 
 ## Demo for binary classification using XGBoost
 
-```
+```python
 import optuna
 import xgboost as xgb
 from sklearn.metrics import roc_auc_score, average_precision_score, accuracy_score
