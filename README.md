@@ -230,7 +230,8 @@ def robustxgb_multi(X_train, y_train, X_test, y_test, n_trials=10):
                                 learning_rate=best_params['learning_rate'],
                                 n_estimators=best_params['n_estimators'],
                                 objective=XGBRFLMulti(best_params['r'], q=best_params['q']),
-                                # tree_method=params['tree_method']
+                                # device= "cuda", # for gpu training
+                                # tree_method= "hist",
                                 )
     model.fit(X_train, y_train)
     
@@ -255,7 +256,6 @@ class RobustXGBMulti(object):
         'n_estimators':trial.suggest_int('n_estimators', 10, 200, 10),
         "r": trial.suggest_categorical("r", [0.0, 0.5, 1.0]),
         "q": trial.suggest_categorical("q", [0.0, 0.1, 0.3, 0.5]),
-        # "tree_method": 'gpu_hist'
     }
     
         clf = xgb.XGBClassifier(max_depth=params['max_depth'],
@@ -264,7 +264,8 @@ class RobustXGBMulti(object):
                                 learning_rate=params['learning_rate'],
                                 n_estimators=params['n_estimators'],
                                 objective=XGBRFLMulti(r=params['r'], q=params['q']),
-                                # tree_method=params['tree_method']
+                                # device= "cuda", # for gpu training
+                                # tree_method= "hist",
                                 )
         cv = StratifiedKFold(n_splits=5, random_state=42, shuffle=True)
         auc_scores = cross_val_score(clf, self.X, self.y, cv=cv, scoring='accuracy')
