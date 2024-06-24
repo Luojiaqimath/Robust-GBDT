@@ -1,5 +1,3 @@
-# Robust-GBDT
-Code for the paper: [Robust-GBDT: GBDT with Nonconvex Loss for Tabular Classification in the Presence of Label Noise and Class Imbalance](https://arxiv.org/pdf/2310.05067.pdf)
 
 
 ## Demo for binary classification using XGBoost
